@@ -1,13 +1,24 @@
+import { useEffect, useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import BookDetail from './pages/BookDetail'
 
 export default function App() {
+  const [isDark, setIsDark] = useState(() => window.localStorage.getItem('stacks-theme') === 'dark')
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light'
+    window.localStorage.setItem('stacks-theme', isDark ? 'dark' : 'light')
+  }, [isDark])
+
   return <div className="app-shell">
     <header className="site-header">
       <Link className="brand" to="/" aria-label="Stacks home"><span className="brand-mark">S</span><span>stacks<span className="brand-dot">.</span></span></Link>
       <span className="header-note">YOUR NEIGHBORHOOD LIBRARY</span>
       <Link className="header-link" to="/">Browse catalog <span aria-hidden="true">↗</span></Link>
+      <button className="theme-toggle" type="button" onClick={() => setIsDark((current) => !current)} aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`} aria-pressed={isDark}>
+        <span aria-hidden="true">{isDark ? '\u2600' : '\u263e'}</span> {isDark ? 'Light mode' : 'Dark mode'}
+      </button>
     </header>
     <main><Routes><Route path="/" element={<HomePage />} /><Route path="/books/:id" element={<BookDetail />} /><Route path="*" element={<NotFound />} /></Routes></main>
     <footer className="site-footer"><span>STORIES LIVE HERE.</span><span>Made for curious minds <span className="brand-dot">✳</span></span></footer>
