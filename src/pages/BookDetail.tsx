@@ -38,11 +38,13 @@ export default function BookDetail() {
 
   const { book } = state
   const totalCopies = book.totalCopies ?? 0
+  const sourceUrl = book.sourceUrl?.trim() || ''
+  const isSafeSourceUrl = /^https?:\/\//i.test(sourceUrl)
 
   return <section className="detail-page">
     <Link className="back-link" to="/">← Back to the catalog</Link>
     <div className="detail-layout"><div className="detail-cover-wrap"><div className="detail-cover"><span className="detail-cover-label">STACKS · {book.genre?.name || 'LIBRARY'}</span><span className="detail-cover-title">{book.title}</span><span className="detail-cover-divider" /><span className="detail-cover-author">{book.author}</span><span className="detail-cover-seal">S</span></div><span className="cover-caption">A little world of its own.</span></div>
-      <div className="detail-copy"><span className="eyebrow"><span className="eyebrow-line" /> BOOK DETAILS</span><h1>{book.title}</h1><p className="detail-author">by {book.author}</p><div className="detail-tags"><span>{book.genre?.name || 'Library collection'}</span><span>{book.publishedAt ? new Date(book.publishedAt).getFullYear() : 'A Stacks pick'}</span></div><div className="detail-rule" /><h2>Between the covers</h2><p className="description">{book.description || 'A story waiting to be discovered. Ask a librarian to learn more about this title.'}</p><dl className="book-facts">{book.isbn && <div><dt>ISBN</dt><dd>{book.isbn}</dd></div>}<div><dt>AVAILABILITY</dt><dd>{totalCopies > 0 ? `${totalCopies} ${totalCopies === 1 ? 'copy' : 'copies'} in the collection` : 'Ask a librarian'}</dd></div></dl><Link to="/" className="button-primary">Keep exploring <span>↗</span></Link></div>
+      <div className="detail-copy"><span className="eyebrow"><span className="eyebrow-line" /> BOOK DETAILS</span><h1>{book.title}</h1><p className="detail-author">by {book.author}</p><div className="detail-tags"><span>{book.genre?.name || 'Library collection'}</span><span>{book.publishedAt ? new Date(book.publishedAt).getFullYear() : 'A Stacks pick'}</span></div><div className="detail-rule" /><h2>Between the covers</h2><p className="description">{book.description || 'A story waiting to be discovered. Ask a librarian to learn more about this title.'}</p><dl className="book-facts">{book.isbn && <div><dt>ISBN</dt><dd>{book.isbn}</dd></div>}<div><dt>AVAILABILITY</dt><dd>{totalCopies > 0 ? `${totalCopies} ${totalCopies === 1 ? 'copy' : 'copies'} in the collection` : 'Ask a librarian'}</dd></div>{isSafeSourceUrl && <div className="source-fact"><dt>MORE ABOUT THIS BOOK</dt><dd><a className="source-link" href={sourceUrl} target="_blank" rel="noopener noreferrer">Visit source <span aria-hidden="true">↗</span></a></dd></div>}</dl><Link to="/" className="button-primary">Keep exploring <span>↗</span></Link></div>
     </div>
   </section>
 }

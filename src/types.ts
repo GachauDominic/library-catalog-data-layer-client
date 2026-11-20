@@ -12,6 +12,7 @@ export interface Book {
   description?: string | null
   isbn?: string | null
   totalCopies?: number | null
+  sourceUrl?: string | null
 }
 
 export type BookSortField = 'title' | 'author'

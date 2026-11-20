@@ -666,6 +666,18 @@ body {
   margin: 0;
   color: #5c655c;
 }
+.source-fact {
+  grid-column: 1 / -1;
+}
+.source-link {
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: #9cac9d;
+  text-underline-offset: 3px;
+}
+.source-link span {
+  margin-left: 3px;
+}
 .button-primary {
   display: inline-flex;
   align-items: center;
