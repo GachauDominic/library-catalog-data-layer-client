@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import BookGrid from "../components/BookGrid";
 import SearchBar from "../components/SearchBar";
+import { API_URL } from "../api";
 import type { BookSortField, Genre } from "../types";
-
-const API_URL = (
-  import.meta.env.LIVE_API_URL || "http://localhost:3000"
-).replace(/\/$/, "");
 
 export default function HomePage() {
   const [genreId, setGenreId] = useState("");

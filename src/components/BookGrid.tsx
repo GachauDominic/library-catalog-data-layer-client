@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import BookCard from "./BookCard";
+import { API_URL } from "../api";
 import type { Book, BookSortField } from "../types";
-
-const API_URL = import.meta.env.LIVE_API_URL.replace(/\/$/, "");
 
 interface BookGridProps {
   genreId: string;

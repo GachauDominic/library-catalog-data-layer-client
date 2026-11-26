@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { API_URL } from "../api";
 import type { Book } from "../types";
-
-const API_URL = (
-  import.meta.env.LIVE_API_URL || "http://localhost:3000"
-).replace(/\/$/, "");
 
 type BookDetailState =
   | { status: "loading" }

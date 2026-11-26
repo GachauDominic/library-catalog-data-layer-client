@@ -29,7 +29,10 @@ Vite prints the local URL when the server starts.
 
 ### Configure the API
 
-The client uses `http://localhost:3000` by default. To use a different API URL, create a local `.env` file in the project root:
+The client uses `http://localhost:3000` in development and
+`https://stacks-library-catalog.vercel.app` in production by default. To use a
+different API URL, set `VITE_API_URL` in the deployment environment or a local
+`.env` file in the project root:
 
 ```env
 VITE_API_URL=http://localhost:3000
@@ -39,7 +42,7 @@ The `.env` pattern is listed in `.gitignore`, but Git continues tracking files a
 
 ## API expectations
 
-The API base URL is configured with `VITE_API_URL`. The client makes these requests:
+The API base URL can be overridden with `VITE_API_URL`. The client makes these requests:
 
 | Method | Path | Purpose |
 |---|---|---|
