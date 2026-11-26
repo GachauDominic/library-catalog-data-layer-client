@@ -4,7 +4,7 @@ import BookCard from "./BookCard";
 import type { Book, BookSortField } from "../types";
 
 const API_URL = (
-  import.meta.env.VITE_API_URL || "http://localhost:3000"
+  import.meta.env.LIVE_API_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
 
 interface BookGridProps {

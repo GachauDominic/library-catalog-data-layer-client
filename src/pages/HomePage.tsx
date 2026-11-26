@@ -4,7 +4,7 @@ import SearchBar from "../components/SearchBar";
 import type { BookSortField, Genre } from "../types";
 
 const API_URL = (
-  import.meta.env.VITE_API_URL || "http://localhost:3000"
+  import.meta.env.LIVE_API_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
 
 export default function HomePage() {
