@@ -120,7 +120,7 @@ export default function BookGrid({
 
   return (
     <>
-      <div className="flex justify-between border-t border-library-line py-[14px] font-mono text-[11px] tracking-[1.4px] text-[#858b80]">
+      <div className="flex justify-between border-t border-library-line py-[14px] font-mono text-[11.5px] tracking-[1.4px] text-[#858b80]">
         <span>
           {books.length} {books.length === 1 ? "BOOK" : "BOOKS"} TO EXPLORE
         </span>

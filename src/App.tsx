@@ -28,15 +28,15 @@ export default function App() {
             stacks<span className="text-library-orange">.</span>
           </span>
         </Link>
-        <span className="hidden font-mono text-[11px] tracking-[1.4px] text-[#899087] md:block">
+        <span className="hidden font-mono text-[12.5px] tracking-[1.4px] text-[#899087] md:block">
           YOUR NEIGHBORHOOD LIBRARY
         </span>
         <Link
-          className="text-[14px] text-library-ink no-underline sm:text-[12px]"
+          className="text-[15.5px] text-library-ink no-underline sm:text-[14px]"
           to="/"
         >
           Browse catalog{" "}
-          <span className="ml-2 text-library-orange" aria-hidden="true">
+          <span className="ml-2 text-library-orange size-3" aria-hidden="true">
             ↗
           </span>
         </Link>
@@ -58,7 +58,7 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-      <footer className="flex h-[68px] items-center justify-between border-t border-library-line font-mono text-[11px] tracking-[1.4px] text-[#858b80] sm:h-[76px]">
+      <footer className="flex h-[68px] items-center justify-between border-t border-library-line font-mono text-[12.25px] tracking-[1.4px] text-[#858b80] sm:h-[76px]">
         <span>STORIES LIVE HERE.</span>
         <span className="font-sans tracking-normal">
           Made for curious minds <span className="text-library-orange">✳</span>

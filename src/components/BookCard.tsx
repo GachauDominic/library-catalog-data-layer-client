@@ -30,27 +30,27 @@ export default function BookCard({ book }: BookCardProps) {
           style={coverStyle}
         >
           <span className="absolute inset-[10px] border border-[#f4eddf]/30" />
-          <span className="relative z-[1] font-mono text-[10px] tracking-[0.5px] opacity-80 sm:text-[11px]">
+          <span className="relative z-[1] font-mono text-[10px] tracking-[0.5px] opacity-80 sm:text-[11.25px]">
             {book.genre?.name || "FROM THE COLLECTION"}
           </span>
           <span className="relative z-[1] mt-auto mb-[9px] font-serif text-[16px] leading-[1.08] font-medium sm:text-[29px]">
             {book.title}
           </span>
           <span className="mb-[9px] h-px w-[25px] bg-[#eee4d1]" />
-          <span className="max-w-[85%] text-[11px] leading-[1.5] tracking-[0.5px] opacity-90 sm:text-[11px]">
+          <span className="max-w-[85%] text-[11px] leading-[1.5] tracking-[0.5px] opacity-90 sm:text-[11.25px]">
             {book.author}
           </span>
           <span className="absolute bottom-[13px] right-3 grid h-[22px] w-[22px] place-items-center rounded-full border border-[#eee4d1]/60 font-serif text-[12px] italic sm:bottom-[19px] sm:right-[19px]">
             S
           </span>
         </div>
-        <span className="absolute inset-x-0 bottom-0 flex justify-between bg-[#26322de8] px-[15px] py-[13px] font-mono text-[11px] tracking-[0.5px] text-library-paper transition-transform duration-200 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0">
+        <span className="absolute inset-x-0 bottom-0 flex justify-between bg-[#26322de8] px-[15px] py-[13px] font-mono text-[11px] tracking-[0.5px] text-stone-300 transition-transform duration-200 translate-y-full group-hover:translate-y-0 group-focus-visible:translate-y-0">
           VIEW BOOK <span aria-hidden="true">↗</span>
         </span>
       </Link>
       <div className="flex justify-between gap-2.5 px-0 py-[13px]">
         <div>
-          <span className="font-mono text-[11px] tracking-[0.8px] text-[#9a7b5b] dark:text-[#d4aa83]">
+          <span className="font-mono text-[12px] tracking-[0.8px] text-[#9a7b5b] dark:text-[#d4aa83]">
             {book.genre?.name || "THE COLLECTION"}
           </span>
           <h3 className="my-[5px] font-serif text-[15px] font-medium leading-[1.3] sm:text-[17px]">

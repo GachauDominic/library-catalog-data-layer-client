@@ -33,7 +33,7 @@ export default function HomePage() {
     <>
       <section className="relative grid min-h-0 grid-cols-1 items-center overflow-hidden border-b border-library-line py-[50px] lg:min-h-[493px] lg:grid-cols-2 lg:py-0">
         <div className="z-[1] py-0 lg:py-[55px] lg:pb-[68px]">
-          <span className="flex items-center gap-2.5 font-mono text-[12px] tracking-[1.4px] text-[#758077]">
+          <span className="flex items-center gap-2.5 font-mono text-[13px] tracking-[1.4px] text-[#758077]">
             <span className="h-px w-6 bg-library-orange" /> THE GOOD KIND OF
             GETTING LOST
           </span>
@@ -42,7 +42,7 @@ export default function HomePage() {
             <br />
             <em className="font-medium text-library-green">favorite</em> story.
           </h1>
-          <p className="m-0 max-w-[390px] text-[15px] leading-[1.8] text-[#777c73]">
+          <p className="m-0 max-w-[390px] text-[15.25px] leading-[1.8] text-[#777c73]">
             Browse the shelves, follow a curiosity, and see where a good book
             takes you.
           </p>
@@ -72,9 +72,6 @@ export default function HomePage() {
             ✦
           </span>
         </div>
-        <div className="absolute bottom-2 left-0 flex items-center gap-2.5 font-mono text-[10px] text-[#858b80] lg:bottom-[25px]">
-          01 <span className="h-px w-10 bg-[#c5c5b8]" /> 04
-        </div>
       </section>
       <section
         className="px-0 py-[57px] sm:py-[76px] sm:pb-[95px]"
@@ -82,7 +79,7 @@ export default function HomePage() {
       >
         <div className="mb-[31px] flex items-start justify-between sm:items-end">
           <div>
-            <span className="flex items-center gap-2.5 font-mono text-[12px] tracking-[1.4px] text-[#758077]">
+            <span className="flex items-center gap-2.5 font-mono text-[13px] tracking-[1.4px] text-[#758077]">
               A SHELF FOR EVERY MOOD
             </span>
             <h2
@@ -92,7 +89,7 @@ export default function HomePage() {
               The catalog<span className="text-library-orange">.</span>
             </h2>
           </div>
-          <span className="text-right font-serif text-[12px] italic leading-[1.65] text-[#86897f] sm:text-[14px] sm:text-left">
+          <span className="text-right font-serif text-[13px] italic leading-[1.65] text-[#86897f] sm:text-[14px] sm:text-left">
             Take your time.
             <br />
             There’s no wrong turn.
@@ -128,7 +125,7 @@ export default function HomePage() {
             books.
           </p>
         )}
-        <div className="mb-3 mt-[-4px] flex items-center justify-between font-mono text-[9px] tracking-[1px] text-[#858b80]">
+        <div className="mb-3 mt-[-4px] flex items-center justify-between font-mono text-[11px] tracking-[1px] text-[#858b80]">
           <span>ORDER THE SHELVES</span>
           <label className="flex items-center gap-2 font-sans text-[15px] tracking-normal">
             Sort by{" "}

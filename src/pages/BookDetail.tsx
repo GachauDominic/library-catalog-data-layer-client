@@ -115,7 +115,7 @@ export default function BookDetail() {
               S
             </span>
           </div>
-          <span className="mt-[17px] block text-center font-mono text-[11px] tracking-[0.5px] text-[#92948a]">
+          <span className="mt-[17px] block text-center font-mono text-[12px] tracking-[0.5px] text-[#92948a]">
             A little world of its own.
           </span>
         </div>
@@ -130,7 +130,7 @@ export default function BookDetail() {
             by {book.author}
           </p>
           <div className="flex gap-2">
-            <span className="border border-library-line px-[10px] py-2 font-mono text-[11px] tracking-[0.7px] text-[#747a70]">
+            <span className="border border-library-line px-[10px] py-2 font-mono text-[12px] tracking-[0.7px] text-[#747a70]">
               {book.genre?.name || "Library collection"}
             </span>
             <span className="border border-library-line px-[10px] py-2 font-mono text-[11px] tracking-[0.7px] text-[#747a70]">
@@ -150,7 +150,7 @@ export default function BookDetail() {
           <dl className="mt-[25px] grid grid-cols-2 gap-[18px] border-t border-library-line pt-[17px]">
             {book.isbn && (
               <div>
-                <dt className="mb-[7px] font-mono text-[11px] text-[#96998f]">
+                <dt className="mb-[7px] font-mono text-[11.5px] text-[#96998f]">
                   ISBN
                 </dt>
                 <dd className="m-0 text-[15px] text-[#5c655c] dark:text-library-ink">
