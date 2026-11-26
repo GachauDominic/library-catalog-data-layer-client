@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import BookCard from "./BookCard";
 import type { Book, BookSortField } from "../types";
 
-const API_URL = (
-  import.meta.env.LIVE_API_URL || "http://localhost:3000"
-).replace(/\/$/, "");
+const API_URL = import.meta.env.LIVE_API_URL.replace(/\/$/, "");
 
 interface BookGridProps {
   genreId: string;
