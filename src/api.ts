@@ -1,5 +1,5 @@
 const configuredApiUrl = import.meta.env.VITE_API_URL;
-const defaultApiUrl = import.meta.env.PROD
+const defaultApiUrl = import.meta.env.LIVE_API_URL
   ? "https://stacks-library-catalog.vercel.app"
   : "http://localhost:3000";
 

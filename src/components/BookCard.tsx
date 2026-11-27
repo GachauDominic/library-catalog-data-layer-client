@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { CSSProperties } from "react";
 import type { Book } from "../types";
+import { useReadingList } from "../context/ReadingListContext";
 
 const colors = [
   "#d9a27e",
@@ -16,6 +17,12 @@ interface BookCardProps {
 }
 
 export default function BookCard({ book }: BookCardProps) {
+  const { readingList, addBook, removeBook } = useReadingList() as {
+    readingList: Book[];
+    addBook: (book: Book) => void;
+    removeBook: (bookId: string | number) => void;
+  };
+  const inReadingList = readingList.some((item) => String(item.id) === String(book.id));
   const color = colors[(book.title?.charCodeAt(0) || 0) % colors.length];
   const coverStyle: CSSProperties = { backgroundColor: color };
   return (
@@ -72,6 +79,13 @@ export default function BookCard({ book }: BookCardProps) {
         >
           ↗
         </Link>
+        <button
+          type="button"
+          onClick={() => inReadingList ? removeBook(book.id) : addBook(book)}
+          className="h-[27px] border border-library-line px-2 text-[11px] text-library-ink"
+        >
+          {inReadingList ? "Remove" : "Add"}
+        </button>
       </div>
     </article>
   );

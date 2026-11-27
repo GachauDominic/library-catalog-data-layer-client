@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { API_URL } from "../api";
 import type { Book } from "../types";
+import { useReadingList } from "../context/ReadingListContext";
 
 type BookDetailState =
   | { status: "loading" }
@@ -10,6 +11,11 @@ type BookDetailState =
   | { status: "ready"; book: Book };
 
 export default function BookDetail() {
+  const { readingList, addBook, removeBook } = useReadingList() as {
+    readingList: Book[];
+    addBook: (book: Book) => void;
+    removeBook: (bookId: string | number) => void;
+  };
   const { id = "" } = useParams();
   const [state, setState] = useState<BookDetailState>({ status: "loading" });
 
@@ -88,6 +94,9 @@ export default function BookDetail() {
   const totalCopies = book.totalCopies ?? 0;
   const sourceUrl = book.sourceUrl?.trim() || "";
   const isSafeSourceUrl = /^https?:\/\//i.test(sourceUrl);
+  const inReadingList = readingList.some(
+    (item) => String(item.id) === String(book.id),
+  );
 
   return (
     <section className="px-0 pb-[100px] pt-[30px]">
@@ -183,12 +192,23 @@ export default function BookDetail() {
               </div>
             )}
           </dl>
-          <Link
-            to="/"
-            className="mt-[25px] inline-flex items-center gap-[26px] bg-library-green px-[16px] py-[13px] text-[15px] text-white no-underline dark:text-[#191f1b]"
-          >
-            Keep exploring <span className="text-[#dcb18b]">↗</span>
-          </Link>
+          <div className="mt-[25px] flex gap-3">
+            <button
+              type="button"
+              onClick={() =>
+                inReadingList ? removeBook(book.id) : addBook(book)
+              }
+              className="border border-library-green bg-transparent px-[16px] py-[13px] text-[15px] text-library-green"
+            >
+              {inReadingList ? "Remove from reading list" : "Add to reading list"}
+            </button>
+            <Link
+              to="/"
+              className="inline-flex items-center gap-[26px] bg-library-green px-[16px] py-[13px] text-[15px] text-white no-underline dark:text-[#191f1b]"
+            >
+              Keep exploring <span className="text-[#dcb18b]">↗</span>
+            </Link>
+          </div>
         </div>
       </div>
     </section>
